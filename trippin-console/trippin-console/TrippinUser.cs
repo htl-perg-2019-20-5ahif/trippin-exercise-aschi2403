@@ -9,7 +9,7 @@ namespace trippin_console
         public string UserName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public ICollection<string> Emails { get; set; }
-        public AddressInfo AddressInfos {get; set;}
+        public string[] Emails { get; set; }
+        public AddressInfo[] AddressInfo {get; set;}
     }
 }

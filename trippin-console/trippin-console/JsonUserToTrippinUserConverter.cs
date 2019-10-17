@@ -8,8 +8,8 @@ namespace trippin_console
     {
         public TrippinUser Convert(JsonUser userToConvert)
         {
-            var emails = new List<string>();
-            emails.Add(userToConvert.Email);
+            var emails = new string[1];
+            emails[0] = userToConvert.Email;
 
             var city = new City
             {
@@ -24,13 +24,16 @@ namespace trippin_console
                 City = city
             };
 
+            var addressInfos = new AddressInfo[1];
+            addressInfos[0] = addressInfo;
+
             var trippinUser = new TrippinUser
             { 
                 UserName = userToConvert.UserName,
                 FirstName = userToConvert.FirstName,
                 LastName = userToConvert.LastName,
                 Emails = emails,
-                AddressInfos = addressInfo
+                AddressInfo = addressInfos
             };
             return trippinUser;
         }
